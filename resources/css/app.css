@@ -1,3 +1,242 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* Modern UI Design System */
+
+@layer base {
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 text-gray-900;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-100;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 rounded-full;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-400;
+    }
+}
+
+@layer components {
+
+    /* Enhanced Card Styles */
+    .card {
+        @apply bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100/50 transition-all duration-300;
+    }
+
+    .card:hover {
+        @apply shadow-xl border-blue-200/50 transform -translate-y-1;
+    }
+
+    .card-header {
+        @apply px-8 py-5 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white font-bold text-gray-900;
+    }
+
+    .card-body {
+        @apply p-8;
+    }
+
+    .card-footer {
+        @apply px-8 py-5 bg-gradient-to-r from-gray-50 to-white border-t border-gray-100;
+    }
+
+    /* Gradient Cards */
+    .gradient-card {
+        @apply bg-gradient-to-br from-white to-blue-50/30 rounded-2xl shadow-lg border border-blue-100/50 p-6 transition-all duration-300;
+    }
+
+    .gradient-card:hover {
+        @apply shadow-2xl transform -translate-y-1;
+    }
+
+    /* Enhanced Button Styles */
+    .btn {
+        @apply font-semibold rounded-xl px-6 py-3 transition-all duration-300 inline-flex items-center justify-center shadow-sm;
+    }
+
+    .btn:active {
+        @apply transform scale-95;
+    }
+
+    .btn-primary {
+        @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white hover: from-blue-700 hover:to-blue-800 focus:ring-4 focus:ring-blue-300 shadow-md hover:shadow-xl;
+    }
+
+    .btn-secondary {
+        @apply bg-gradient-to-r from-gray-600 to-gray-700 text-white hover: from-gray-700 hover:to-gray-800 focus:ring-4 focus:ring-gray-300 shadow-md hover:shadow-lg;
+    }
+
+    .btn-success {
+        @apply bg-gradient-to-r from-green-600 to-green-700 text-white hover: from-green-700 hover:to-green-800 focus:ring-4 focus:ring-green-300 shadow-md hover:shadow-lg;
+    }
+
+    .btn-warning {
+        @apply bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover: from-yellow-600 hover:to-orange-600 focus:ring-4 focus:ring-yellow-300 shadow-md hover:shadow-lg;
+    }
+
+    .btn-danger {
+        @apply bg-gradient-to-r from-red-600 to-red-700 text-white hover: from-red-700 hover:to-red-800 focus:ring-4 focus:ring-red-300 shadow-md hover:shadow-lg;
+    }
+
+    .btn-outline {
+        @apply bg-white border-2 border-blue-600 text-blue-600 hover: bg-blue-50 focus:ring-4 focus:ring-blue-200;
+    }
+
+    .btn-sm {
+        @apply px-4 py-2 text-sm;
+    }
+
+    .btn-lg {
+        @apply px-8 py-4 text-lg;
+    }
+
+    /* Enhanced Form Controls */
+    .form-control {
+        @apply w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus: ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 bg-white;
+    }
+
+    .form-control:focus {
+        @apply shadow-lg;
+    }
+
+    .form-label {
+        @apply block text-sm font-semibold text-gray-700 mb-2;
+    }
+
+    .form-select {
+        @apply w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus: ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 bg-white cursor-pointer;
+    }
+
+    /* Table Enhancements */
+    .table {
+        @apply w-full border-collapse bg-white rounded-2xl overflow-hidden shadow-lg;
+    }
+
+    .table thead {
+        @apply bg-gradient-to-r from-gray-50 to-blue-50/50;
+    }
+
+    .table th {
+        @apply px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-b-2 border-gray-200;
+    }
+
+    .table td {
+        @apply px-6 py-4 text-sm text-gray-900 border-b border-gray-100;
+    }
+
+    .table tbody tr {
+        @apply transition-colors duration-200;
+    }
+
+    .table tbody tr:hover {
+        @apply bg-blue-50/50;
+    }
+
+    .table-striped tbody tr:nth-child(even) {
+        @apply bg-gray-50/50;
+    }
+
+    /* Badge Styles */
+    .badge {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide;
+    }
+
+    .badge-primary {
+        @apply bg-blue-100 text-blue-800 border border-blue-200;
+    }
+
+    .badge-success {
+        @apply bg-green-100 text-green-800 border border-green-200;
+    }
+
+    .badge-warning {
+        @apply bg-yellow-100 text-yellow-800 border border-yellow-200;
+    }
+
+    .badge-danger {
+        @apply bg-red-100 text-red-800 border border-red-200;
+    }
+
+    .badge-info {
+        @apply bg-cyan-100 text-cyan-800 border border-cyan-200;
+    }
+
+    .badge-gray {
+        @apply bg-gray-100 text-gray-800 border border-gray-200;
+    }
+
+    /* Alert Boxes */
+    .alert {
+        @apply rounded-xl p-5 mb-4 border-l-4 shadow-md;
+    }
+
+    .alert-success {
+        @apply bg-green-50 border-green-500 text-green-900;
+    }
+
+    .alert-danger {
+        @apply bg-red-50 border-red-500 text-red-900;
+    }
+
+    .alert-warning {
+        @apply bg-yellow-50 border-yellow-500 text-yellow-900;
+    }
+
+    .alert-info {
+        @apply bg-blue-50 border-blue-500 text-blue-900;
+    }
+
+    /* Stats Cards */
+    .stat-card {
+        @apply bg-white rounded-2xl shadow-lg hover: shadow-2xl transition-all duration-300 p-6 border border-gray-100;
+    }
+
+    .stat-card:hover {
+        @apply transform -translate-y-2;
+    }
+
+    .stat-icon {
+        @apply h-16 w-16 rounded-2xl flex items-center justify-center shadow-md;
+    }
+
+    /* Loading States */
+    .skeleton {
+        @apply bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse rounded;
+    }
+
+    /* Utility Classes */
+    .glass-effect {
+        @apply bg-white/70 backdrop-blur-lg border border-white/20;
+    }
+
+    .shadow-card {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .shadow-card-lg {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+    }
+}
